@@ -1,0 +1,4 @@
+#+title: 
+#+setupfile: /Users/mustakas/Documents/org/setup_themes/theme-readtheorg.setup
+#+bind: org-export-publishing-directory "./exports"
+#+options: num:nil

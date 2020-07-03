@@ -1,0 +1,26 @@
+#+title: Example of inline code
+
+#+BEGIN_SRC python :python /Users/mustakas/miniconda3/envs/py3/bin/python3.6 :results output :exports both
+import sys
+print(f'the version of python is {sys.version_info[0]}')
+#+END_SRC
+
+#+RESULTS:
+: 3
+
+
+
+#+BEGIN_SRC python :python /Users/mustakas/miniconda3/envs/py3/bin/python3.6
+def myFunc(list):
+    myarr = []
+    x = 5
+    for i in list:
+        myarr.append(x+i)
+#+END_SRC
+
+
+#+header: :exports both 
+#+begin_src shell
+python --version
+which python
+#+end_src
