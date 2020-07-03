@@ -1,0 +1,37 @@
+# .bashrc
+
+### set $USER var to user id in bash_profile ###
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+source /home/$USER/miniconda3/etc/profile.d/conda.sh
+
+#export no_proxy="*.amazonaws.com,*att.us-east-1.aws.privatelink.snowflakecomputing.com,localhost,127.0.0.1,*att.us-east-1.aws.privatelink.snowflakecomputing.com, *slack.com, *research.att.com"
+
+alias start_tunnel='ssh -R 3128:proxy.aws.att.com:3128 emr'
+alias l='ls -l'
+alias cl='clear'
+alias runconda='conda activate'
+alias closeconda='conda deactivate'
+alias l='ls -l'
+
+
+# Set Proxy
+function setproxy() {
+    export {http,https,ftp}_proxy="http://proxy.aws.att.com:3128"
+}
+
+# Unset Proxy
+function unsetproxy() {
+    unset {http,https,ftp}_proxy
+}

@@ -1,0 +1,39 @@
+# .bashrc
+
+## set USER var to user id in bash_profile ##
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific aliases and functions
+  # START block AD Join
+    sudo /usr/bin/create-hdfs-user-home-dir.sh
+  # END block AD Join
+
+alias cl='clear'
+alias l='ls -l'
+
+# source miniconda3
+source /home/$USER/miniconda3/etc/profile.d/conda.sh
+
+# Set Proxy
+function setproxy() {
+    export {http,https,ftp}_proxy="http://proxy.aws.att.com:3128"
+}
+
+# Unset Proxy
+function unsetproxy() {
+    unset {http,https,ftp}_proxy
+}
+
+# Set PYSPARK DRIVER
+function setdriver() {
+    export PYSPARK_DRIVER_PYTHON=/home/$USER/miniconda3/envs/spark_py2/bin/ipython2
+}
+
+# Unset PYSPARK DRIVER 
+function unsetdriver() {
+    unset PYSPARK_DRIVER_PYTHON
+}
